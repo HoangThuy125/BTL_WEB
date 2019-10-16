@@ -1,0 +1,152 @@
+﻿@using BTL_WEB.Models.Functions;
+@using BTL_WEB.Models.Entities;
+@{
+    ViewBag.Title = "Home Page";
+    int i = 0;
+    Func_SanPham sp = new Func_SanPham();
+}
+
+
+@model List<tbl_sanpham>
+
+    <!--
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
+    -->
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+        <title>Mobilestore Website Template | Home :: W3layouts</title>
+        <link href="/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <meta name="keywords" content="Mobilestore iphone web template, Android web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+        <link href='//fonts.googleapis.com/css?family=Londrina+Solid|Coda+Caption:800|Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/Content/css/responsiveslides.css">
+        <script src="/Content/js/jquery.min.js"></script>
+        <script src="/Content/js/responsiveslides.min.js"></script>
+        <script>
+            // You can also use "$(window).load(function() {"
+            $(function () {
+
+                // Slideshow 1
+                $("#slider1").responsiveSlides({
+                    maxwidth: 1600,
+                    speed: 600
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <!--start-image-slider---->
+        <div class="wrap">
+            <div class="image-slider">
+                <!-- Slideshow 1 -->
+                <ul class="rslides" id="slider1">
+                    <li><img src="/Content/images/1.png" alt=""></li>
+                    <li><img src="/Content/images/2.png" alt=""></li>
+                    <li><img src="/Content/images/1.png" alt=""></li>
+                </ul>
+                <!-- Slideshow 2 -->
+            </div>
+            <!--End-image-slider---->
+        </div>
+        <div class="clear"> </div>
+        <div class="wrap">
+            <div class="content">
+                <div class="top-3-grids">
+                    <div class="section group">
+                        <div class="grid_1_of_3 images_1_of_3">
+                            <a href="/Home/Show"><img src="/Content/images/grid-img1.jpg"></a>
+                            <h3>Lorem Ipsum is simply dummy text </h3>
+                        </div>
+                        <div class="grid_1_of_3 images_1_of_3 second">
+                            <a href="/Home/Show"><img src="/Content/images/grid-img2.jpg"></a>
+                            <h3>Lorem Ipsum is simply dummy text </h3>
+                        </div>
+                        <div class="grid_1_of_3 images_1_of_3 theree">
+                            <a href="/Home/Show"><img src="/Content/images/grid-img3.jpg"></a>
+                            <h3>Lorem Ipsum is simply dummy text </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grids">
+                    <h4>Deals of the day</h4>
+                    <div class="section group">
+                        @foreach (tbl_sanpham it in Model)
+                        {
+                            <div class="grid_1_of_4 images_1_of_4">
+                                <a href="/Home/Show?sanpham=@it.id"><img src="@sp.getImg(it.id)[0]" alt="" /></a>
+                                <h2>@it.ten </h2>
+                                <div class="price-details">
+                                    <div class="price-number">
+                                        <p><span class="rupees">@it.gia VND</span></p>
+                                    </div>
+                                    <div class="add-cart">
+                                        <h4><a href="/Home/Show">Add to Cart</a></h4>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                            </div>
+                            i++;
+                        }
+                       
+                    </div>
+                    @*<div class="section group">
+                            <div class="grid_1_of_4 images_1_of_4 products-info">
+                                <img src="/Content/images/m2.jpg">
+                                <a href="/Home/Show">Duis aute irure dolor in reprehenderit sed do eiusmod tempor incididunt</a>
+                                <h3>$260</h3>
+                                <ul>
+                                    <li><a class="cart" href="/Home/Show"> </a></li>
+                                    <li><a class="i" href="/Home/Show"> </a></li>
+                                    <li><a class="Compar" href="/Home/Show"> </a></li>
+                                    <li><a class="Wishlist" href="/Home/Show"> </a></li>
+                                </ul>
+                            </div>
+                            <div class="grid_1_of_4 images_1_of_4 products-info">
+                                <img src="/Content/images/m6.jpg">
+                                <a href="/Home/Show">Duis aute irure dolor in reprehenderit sed do eiusmod tempor incididunt</a>
+                                <h3>$100</h3>
+                                <ul>
+                                    <li><a class="cart" href="/Home/Show"> </a></li>
+                                    <li><a class="i" href="/Home/Show"> </a></li>
+                                    <li><a class="Compar" href="/Home/Show"> </a></li>
+                                    <li><a class="Wishlist" href="/Home/Show"> </a></li>
+                                </ul>
+                            </div>
+                            <div class="grid_1_of_4 images_1_of_4 products-info">
+                                <img src="/Content/images/m7.jpg">
+                                <a href="/Home/Show">Duis aute irure dolor in reprehenderit sed do eiusmod tempor incididunt</a>
+                                <h3>$180</h3>
+                                <ul>
+                                    <li><a class="cart" href="/Home/Show"> </a></li>
+                                    <li><a class="i" href="/Home/Show"> </a></li>
+                                    <li><a class="Compar" href="/Home/Show"> </a></li>
+                                    <li><a class="Wishlist" href="/Home/Show"> </a></li>
+                                </ul>
+                            </div>
+                            <div class="grid_1_of_4 images_1_of_4 products-info">
+                                <img src="/Content/images/m1.jpg">
+                                <a href="/Home/Show">Duis aute irure dolor in reprehenderit sed do eiusmod tempor incididunt</a>
+                                <h3>$140</h3>
+                                <ul>
+                                    <li><a class="cart" href="/Home/Show"> </a></li>
+                                    <li><a class="i" href="/Home/Show"> </a></li>
+                                    <li><a class="Compar" href="/Home/Show"> </a></li>
+                                    <li><a class="Wishlist" href="/Home/Show"> </a></li>
+                                </ul>
+                            </div>
+                        </div>*@
+
+                </div>
+                @Html.Partial("_MyPartial")
+            </div>
+            <div class="clear"> </div>
+        </div>
+
+    </body>
+</html>
