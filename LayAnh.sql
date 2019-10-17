@@ -1,6 +1,10 @@
 use shopmobi
 go
 
+update tbl_anh
+	set duongdan = 'anh'+cast(id as varchar)+'.jpg'
+go
+
 CREATE PROCEDURE [dbo].[LayAnh_id_sp]
 	@id_sp int
 AS
