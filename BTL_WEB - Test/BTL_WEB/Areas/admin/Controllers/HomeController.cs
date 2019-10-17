@@ -17,7 +17,7 @@ namespace BTL_WEB.Areas.admin.Controllers
         {
             var list = new Func_SanPham().DS_SanPham.ToList();
             ViewBag.SP = list;
-
+            ViewBag.tittle = "Admin shop mua ban";
             return View();
         }
 
