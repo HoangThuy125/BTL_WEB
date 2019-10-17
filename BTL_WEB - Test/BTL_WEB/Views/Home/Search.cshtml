@@ -77,7 +77,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     @foreach (tbl_sanpham it in Model)
                     {
                         <div class="grid_1_of_4 images_1_of_4">
-                            <a href="/Home/Show?sanpham=@it.id"><img src="@listImg[i] " alt="" /></a>
+                            <a href="/Home/Show?sanpham=@it.id"><img src="/Content/images/@listImg[i] " alt="" /></a>
                             <h2>@it.ten </h2>
                             <div class="price-details">
                                 <div class="price-number">
@@ -94,53 +94,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     }
 
                 </div>
-                @*<div class="section group">
-                        <div class="grid_1_of_4 images_1_of_4 products-info">
-                            <img src="/Content/images/m2.jpg">
-                            <a href="/Home/Show">Duis aute irure dolor in reprehenderit sed do eiusmod tempor incididunt</a>
-                            <h3>$260</h3>
-                            <ul>
-                                <li><a class="cart" href="/Home/Show"> </a></li>
-                                <li><a class="i" href="/Home/Show"> </a></li>
-                                <li><a class="Compar" href="/Home/Show"> </a></li>
-                                <li><a class="Wishlist" href="/Home/Show"> </a></li>
-                            </ul>
-                        </div>
-                        <div class="grid_1_of_4 images_1_of_4 products-info">
-                            <img src="/Content/images/m6.jpg">
-                            <a href="/Home/Show">Duis aute irure dolor in reprehenderit sed do eiusmod tempor incididunt</a>
-                            <h3>$100</h3>
-                            <ul>
-                                <li><a class="cart" href="/Home/Show"> </a></li>
-                                <li><a class="i" href="/Home/Show"> </a></li>
-                                <li><a class="Compar" href="/Home/Show"> </a></li>
-                                <li><a class="Wishlist" href="/Home/Show"> </a></li>
-                            </ul>
-                        </div>
-                        <div class="grid_1_of_4 images_1_of_4 products-info">
-                            <img src="/Content/images/m7.jpg">
-                            <a href="/Home/Show">Duis aute irure dolor in reprehenderit sed do eiusmod tempor incididunt</a>
-                            <h3>$180</h3>
-                            <ul>
-                                <li><a class="cart" href="/Home/Show"> </a></li>
-                                <li><a class="i" href="/Home/Show"> </a></li>
-                                <li><a class="Compar" href="/Home/Show"> </a></li>
-                                <li><a class="Wishlist" href="/Home/Show"> </a></li>
-                            </ul>
-                        </div>
-                        <div class="grid_1_of_4 images_1_of_4 products-info">
-                            <img src="/Content/images/m1.jpg">
-                            <a href="/Home/Show">Duis aute irure dolor in reprehenderit sed do eiusmod tempor incididunt</a>
-                            <h3>$140</h3>
-                            <ul>
-                                <li><a class="cart" href="/Home/Show"> </a></li>
-                                <li><a class="i" href="/Home/Show"> </a></li>
-                                <li><a class="Compar" href="/Home/Show"> </a></li>
-                                <li><a class="Wishlist" href="/Home/Show"> </a></li>
-                            </ul>
-                        </div>
-                    </div>*@
-
             </div>
             @Html.Partial("_MyPartial")
         </div>
