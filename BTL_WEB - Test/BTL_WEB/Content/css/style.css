@@ -285,10 +285,11 @@ body{
 	-webkit-box-shadow: inset 0 0px 15px rgba(0,0,0,0.12);
 }
 .products-info ul{
-	
+	;
 }
 .images_1_of_4  img{
 	max-width:100%;
+    height:200px;
 	display:block;
 	padding-bottom: 8px;
 	margin: 0 auto;
