@@ -1,8 +1,7 @@
-﻿<script>
-    $(document).on("click", ".open-modal", function () {
-        $('#details').attr('href', $(this).data('url')); 
-    })
-</script>
+﻿@using BTL_WEB.Models.Entities
+@{ 
+    
+}
 <div id="editmodal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -14,11 +13,12 @@
             </div>
             <div class="modal-body">
                 <form>
-                    <label id="idsanpham"></label>
+                    <label id="idsanpham">@Model.id</label>
+                    
                     <label>Text Input with Placeholder</label>
                     <input class="form-control" placeholder="Enter text">
                     <label for="disabledSelect">Disabled input</label>
-                    <input class="form-control" id="idsanpham" type="text"  disabled>
+                    <input class="form-control" type="text"  disabled>
 
                 </form>
                
