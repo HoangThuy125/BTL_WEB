@@ -7,6 +7,10 @@ Author: http://binarytheme.com
 ======================================*/
 
 $(function () {
+    //chuyen huong
+
+
+
     // tooltip demo
     $('.tooltip-demo').tooltip({
         selector: "[data-toggle=tooltip]",

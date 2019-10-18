@@ -15,6 +15,7 @@
     <link href="/Content/assets/css/main-style.css" rel="stylesheet" />
     <!-- Page-Level CSS -->
     <link href="/Content/assets/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    
 </head>
 <body>
     <!--  wrapper -->
@@ -31,23 +32,27 @@
                 Html.RenderPartial("navbarsite");
             }
             @RenderBody()
-       
+
     </div>
         <!-- end wrapper -->
         <!-- Core Scripts - Include with every page -->
+        
         @Scripts.Render("~/Content/assets/plugins/jquery-1.10.2.js",
          "~/Content/assets/plugins/bootstrap/bootstrap.min.js",
          "~/Content/assets/plugins/metisMenu/jquery.metisMenu.js",
          "~/Content/assets/plugins/pace/pace.js",
-         "~/Content/assets/scripts/siminta.js")
+         "~/Content/assets/scripts/siminta.js"
+        )
+
+
         <!-- Page-Level Plugin Scripts-->
         @Scripts.Render("~/Content/assets/plugins/morris/raphael-2.1.0.min.js",
         "~/Content/assets/plugins/morris/morris.js",
         "~/Content/assets/plugins/morris/morris.js",
         "~/Content/assets/scripts/dashboard-demo.js"
         )
-        
-    
+
+
 </body>
 
 </html>
