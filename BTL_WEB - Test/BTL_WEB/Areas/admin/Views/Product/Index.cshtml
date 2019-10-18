@@ -49,16 +49,20 @@
                                     <tr class="odd gradeX">
                                         <td class="center">@stt</td>@{stt++;
                                         }
-                                        <td id="idsanpham-@sp.id">@sp.id</td>
+                                        <td >@sp.id</td>
                                         <td >@nhasanxuat.getname_nhasanxuat((int)(@sp.id_nsx)) </td>
                                         <td >@sp.ten</td>
                                         <td>@sp.gia</td>
                                         <td>@sp.soluong</td>
                                         <td><img src="~/Content/images/@sanpham.getImg(@sp.id)[0]" width="50" height="50"></td>
-                                        @{
-                                            Html.RenderPartial("EditModal", @sp);
-                                        }
-                                        <td><button type="button" class="open-modal fa fa-edit" data-id="idsanpham-@sp.id" data-toggle="modal" data-target="#editmodal"></button></td>
+
+                                        <td>
+                                            <form action="/admin/Product/edit" method="post">
+                                                    <input type="hidden" id="idsanpham" placeholder="@sp.id"> 
+                                                    <input type="submit" class="fa fa-edit" value="">
+                                                  
+                                            </form>
+                                        </td>
 
                                     </tr>
                                 }
