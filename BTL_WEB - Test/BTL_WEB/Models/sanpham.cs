@@ -1,5 +1,11 @@
-namespace BTL_WEB.Models.Entities
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace BTL_WEB.Models
 {
+  
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
@@ -7,21 +13,14 @@ namespace BTL_WEB.Models.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
     [JsonObject(IsReference = true)]
-    public partial class tbl_sanpham
+    public partial class sanpham
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-
-        public tbl_sanpham()
+        public sanpham()
         {
-            tbl_anh = new HashSet<tbl_anh>();
-            tbl_chitietdonhang = new HashSet<tbl_chitietdonhang>();
+
         }
 
         public int id { get; set; }
-        //public string get_link()
-        //{
-        //    LayAnh
-        //}
         public int? id_dm { get; set; }
 
         [StringLength(150)]
@@ -66,14 +65,5 @@ namespace BTL_WEB.Models.Entities
 
         public int? tinhtrang { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_anh> tbl_anh { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_chitietdonhang> tbl_chitietdonhang { get; set; }
-
-        public virtual tbl_danhmuc tbl_danhmuc { get; set; }
-
-        public virtual tbl_nhasanxuat tbl_nhasanxuat { get; set; }
     }
 }

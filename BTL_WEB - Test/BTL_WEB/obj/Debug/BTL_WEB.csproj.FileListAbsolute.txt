@@ -278,3 +278,9 @@ C:\Users\Thuy\Desktop\BTWEB_GIT\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\Microsoft.AI.
 C:\Users\Thuy\Desktop\BTWEB_GIT\BTL_WEB\BTL_WEB - Test\BTL_WEB\obj\Debug\BTL_WEB.csprojResolveAssemblyReference.cache
 C:\Users\Thuy\Desktop\BTWEB_GIT\BTL_WEB\BTL_WEB - Test\BTL_WEB\obj\Debug\BTL_WEB.dll
 C:\Users\Thuy\Desktop\BTWEB_GIT\BTL_WEB\BTL_WEB - Test\BTL_WEB\obj\Debug\BTL_WEB.pdb
+C:\Users\nguye\Documents\GitHub\WEB\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Net.Http.Formatting.dll
+C:\Users\nguye\Documents\GitHub\WEB\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Web.Http.dll
+C:\Users\nguye\Documents\GitHub\WEB\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Web.Http.WebHost.dll
+C:\Users\nguye\Documents\GitHub\WEB\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Net.Http.Formatting.xml
+C:\Users\nguye\Documents\GitHub\WEB\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Web.Http.xml
+C:\Users\nguye\Documents\GitHub\WEB\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Web.Http.WebHost.xml

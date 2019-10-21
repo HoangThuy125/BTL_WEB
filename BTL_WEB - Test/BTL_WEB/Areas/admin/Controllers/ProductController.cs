@@ -14,5 +14,11 @@ namespace BTL_WEB.Areas.admin.Controllers
             ViewBag.select = "product";
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Edit()
+        {
+            return View();
+        }
     }
 }
