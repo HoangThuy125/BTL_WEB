@@ -41,6 +41,9 @@
                             </thead>
 
                             <tbody>
+                                @{
+                                    Html.RenderPartial("EditModal");
+                                }
 
                                 @{var stt = 1;}
                                 @foreach (tbl_sanpham sp in list)
@@ -57,11 +60,11 @@
                                         <td><img src="~/Content/images/@sanpham.getImg(@sp.id)[0]" width="50" height="50"></td>
 
                                         <td>
-                                            <form action="/admin/Product/edit" method="post">
-                                                    <input type="hidden" id="idsanpham" placeholder="@sp.id"> 
-                                                    <input type="submit" class="fa fa-edit" value="">
-                                                  
-                                            </form>
+                                            <div class="container-fluid">
+                                                <button style="background-image: url(/Content/assets/img/show.png); height:30px; width:30px" type="button"  data-toggle="modal" data-target="#myModal"></button>    
+                                                <button style="background-image: url(/Content/assets/img/edit.png); height:30px; width:30px" class="editproduct" type="button" data-toggle="modal" data-id=@sp.id data-target="#edit-product-modal"></button>    
+                                                <button style="background-image: url(/Content/assets/img/delete.png); height:30px; width:30px" type="button" data-toggle="modal" data-target="#delete-product-modal"></button>    
+                                            </div>
                                         </td>
 
                                     </tr>

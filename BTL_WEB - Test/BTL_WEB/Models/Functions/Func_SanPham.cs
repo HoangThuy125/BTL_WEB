@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using BTL_WEB.Models.Entities;
 using System.Data.SqlClient;
-
+using Newtonsoft.Json;
+using BTL_WEB.Models;
 namespace BTL_WEB.Models.Functions
 {
+    [JsonObject(IsReference = true)]
     public class Func_SanPham
     {
         private MyDBContext context;
@@ -100,6 +102,30 @@ namespace BTL_WEB.Models.Functions
         //    tbl_sanpham dbEntry = context.tbl_sanpham.Find
         //}
         
+        public sanpham getnewsanpham(tbl_sanpham oldsanpham)
+        {
+            sanpham newsanpham = new sanpham();
+            newsanpham.baohanh = oldsanpham.baohanh;
+            newsanpham.bluetooth = oldsanpham.bluetooth;
+            newsanpham.camera_sau = oldsanpham.camera_sau;
+            newsanpham.camera_truoc = oldsanpham.camera_truoc;
+            newsanpham.CPU = oldsanpham.CPU;
+            newsanpham.gia = oldsanpham.gia;
+            newsanpham.id = oldsanpham.id;
+            newsanpham.id_dm = oldsanpham.id_dm;
+            newsanpham.id_nsx = oldsanpham.id_nsx;
+            newsanpham.manhinh = oldsanpham.manhinh;
+            newsanpham.pin = oldsanpham.pin;
+            newsanpham.RAM = oldsanpham.RAM;
+            newsanpham.ROM = oldsanpham.ROM;
+            newsanpham.soluong = oldsanpham.soluong;
+            newsanpham.ten = oldsanpham.ten;
+            newsanpham.thenho = oldsanpham.thenho;
+            newsanpham.tinhtrang = oldsanpham.tinhtrang;
+            newsanpham.trongluong = oldsanpham.trongluong;
+            return newsanpham;
+        }
+            
 
     }
 }

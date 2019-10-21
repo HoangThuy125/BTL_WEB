@@ -17,7 +17,7 @@ namespace BTL_WEB.Models.Functions
 
         // Trả về tất cả các bản ghi
         // Trả về danh mục
-        public IQueryable<tbl_nhasanxuat> DS_SanPham
+        public IQueryable<tbl_nhasanxuat> DS_NhaSanXuat
         {
             get { return context.tbl_nhasanxuat; }
         }

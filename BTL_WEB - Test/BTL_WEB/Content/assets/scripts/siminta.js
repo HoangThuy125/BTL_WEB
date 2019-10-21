@@ -1,15 +1,24 @@
-
+﻿
 /*====================================
  Free To Use For Personal And Commercial Usage
 Author: http://binarytheme.com
  Share Us if You Like our work 
  Enjoy Our Codes For Free always.
 ======================================*/
+$(document).on("click", ".editproduct", function () {
+    var idsp = $(this).data('id');
+    console.log(idsp);
+    $(".modal-body #idsanpham").text(idsp);
 
+});
 $(function () {
-    //chuyen huong
-
-
+    //alert xoa
+ 
+     $(".delete-product").click(function(){
+    if (!confirm("Bạn có chắc chắn xóa sản phẩm!")){
+      return false;
+    }
+  });
 
     // tooltip demo
     $('.tooltip-demo').tooltip({

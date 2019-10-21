@@ -1,8 +1,10 @@
 ﻿@using BTL_WEB.Models.Entities
-@{ 
-    
+@using BTL_WEB.Models.Functions
+@{
+    List<tbl_nhasanxuat> list_nxs = new Func_nhasanxuat().DS_NhaSanXuat.ToList();
+
 }
-<div id="editmodal" class="modal fade" role="dialog">
+<div id="edit-product-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -13,12 +15,88 @@
             </div>
             <div class="modal-body">
                 <form>
-                    <label id="idsanpham">@Model.id</label>
+                    <label id="idsanpham">  </label>
                     
-                    <label>Text Input with Placeholder</label>
-                    <input class="form-control" placeholder="Enter text">
-                    <label for="disabledSelect">Disabled input</label>
-                    <input class="form-control" type="text"  disabled>
+                    <div class="form-group">
+                        <label>Tên sản phẩm</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+                    <div class="form-group">
+                        <label>Giá sản phẩm</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+                    <div class="form-group">
+                        <label>Số lượng</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+                    <div class="form-group">
+                        <label>Trọng lượng</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rom</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ram</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Thẻ nhớ</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Camera trước</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Camera sau</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Pin</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Thời gian bảo hành</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+                    <div class="form-group">
+                        <label>Bluetooth</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+                    <div class="form-group">
+                        <label>Nhà sản xuất</label>
+                        <select class="form-control">
+                            @foreach (tbl_nhasanxuat nsx in list_nxs)
+                          {
+                                <option>@nsx.ten</option>
+                            }
+
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>CPU</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+                    <div class="form-group">
+                        <label>Màn hình</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
+                    <div class="form-group">
+                        <label>Tình trạng</label>
+                        <input class="form-control" placeholder="Enter text">
+                    </div>
 
                 </form>
                
