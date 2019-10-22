@@ -284,3 +284,9 @@ C:\Users\nguye\Documents\GitHub\WEB\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.We
 C:\Users\nguye\Documents\GitHub\WEB\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Net.Http.Formatting.xml
 C:\Users\nguye\Documents\GitHub\WEB\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Web.Http.xml
 C:\Users\nguye\Documents\GitHub\WEB\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Web.Http.WebHost.xml
+C:\Users\Thuy\Desktop\BTWEB_GIT\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Net.Http.Formatting.dll
+C:\Users\Thuy\Desktop\BTWEB_GIT\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Web.Http.dll
+C:\Users\Thuy\Desktop\BTWEB_GIT\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Web.Http.WebHost.dll
+C:\Users\Thuy\Desktop\BTWEB_GIT\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Net.Http.Formatting.xml
+C:\Users\Thuy\Desktop\BTWEB_GIT\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Web.Http.xml
+C:\Users\Thuy\Desktop\BTWEB_GIT\BTL_WEB\BTL_WEB - Test\BTL_WEB\bin\System.Web.Http.WebHost.xml
