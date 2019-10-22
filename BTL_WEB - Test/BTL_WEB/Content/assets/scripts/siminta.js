@@ -9,6 +9,26 @@ $(document).on("click", ".editproduct", function () {
     var idsp = $(this).data('id');
     console.log(idsp);
     $(".modal-body #idsanpham").text(idsp);
+    var host = "http" + location.host;
+    $.ajax({
+
+        url: "/api/sanpham/getsanpham/" + idsp.toString(),
+        dataType: "json",
+        success: function (result) {
+            $("#div1").html(result);
+            console.log(result);
+            $.each(JSON.parse(result), function (index, element) {
+                console.log("---1");
+                console.log(index);
+                console.log("---2");
+                console.log(element);
+                console.log("---3");
+                $('.modal-body').append($('<div>', {
+                    text: element
+                }));
+            });
+        }
+    });
 
 });
 $(function () {
