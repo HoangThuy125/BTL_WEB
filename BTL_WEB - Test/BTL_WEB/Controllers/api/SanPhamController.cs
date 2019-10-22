@@ -8,6 +8,7 @@ using System.Web.Http;
 using BTL_WEB.Models.Entities;
 using BTL_WEB.Models.Functions;
 using BTL_WEB.Models;
+using Newtonsoft.Json.Linq;
 
 namespace BTL_WEB.Controllers
 {
@@ -25,5 +26,33 @@ namespace BTL_WEB.Controllers
             string json = JsonConvert.SerializeObject(newsanpham);
             return json;
         }
+        [HttpPost]
+        [Route("api/sanpham/updatesanpham/")]
+        public string UpdatesSanPham([FromBody] string data)
+        {
+          //  string data = requestdata.Content.ReadAsStringAsync().Result;
+            dynamic stuff = JsonConvert.DeserializeObject(data);
+
+            string status = "{\"status\":1, \"sanpham\":" + stuff.id + "}";
+            try
+            {
+                sanpham newsanpham = JsonConvert.DeserializeObject<sanpham>(data);
+                Func_SanPham hamsanpham = new Func_SanPham();
+                tbl_sanpham sanpham = hamsanpham.getsanpham(newsanpham);
+                int? x = hamsanpham.Update(sanpham);
+                if (x == null)
+                {
+                    status = "{\"status\":-1, \"sanpham\":" + stuff.id + "}";
+                }
+
+            }
+            catch
+            {
+               status = "{\"status\":0, \"sanpham\":" + stuff.id + "}";
+            }
+            return status;
+        }
+
+
     }
 }
