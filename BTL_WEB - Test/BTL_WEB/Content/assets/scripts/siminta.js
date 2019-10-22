@@ -5,6 +5,7 @@ Author: http://binarytheme.com
  Share Us if You Like our work 
  Enjoy Our Codes For Free always.
 ======================================*/
+
 $(document).on("click", ".editproduct", function () {
     var idsp = $(this).data('id');
     console.log(idsp);
@@ -29,6 +30,18 @@ $(document).on("click", ".editproduct", function () {
             });
         }
     });
+
+});
+
+// action post data edit sanpham
+$(document).on("click", ".submitsanphamupdate", function () {
+
+    var data = "{data:\"312312\"}";
+    $.post("/api/sanpham/updatesanpham/", { "": "32344323"},
+        function (data) {
+            console.log(resual);
+        }   
+    );
 
 });
 $(function () {
