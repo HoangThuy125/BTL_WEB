@@ -8,26 +8,37 @@ Author: http://binarytheme.com
 
 $(document).on("click", ".editproduct", function () {
     var idsp = $(this).data('id');
-    console.log(idsp);
     $(".modal-body #idsanpham").text(idsp);
+    
     var host = "http" + location.host;
     $.ajax({
 
         url: "/api/sanpham/getsanpham/" + idsp.toString(),
         dataType: "json",
         success: function (result) {
-            $("#div1").html(result);
-            console.log(result);
-            $.each(JSON.parse(result), function (index, element) {
-                console.log("---1");
-                console.log(index);
-                console.log("---2");
-                console.log(element);
-                console.log("---3");
-                $('.modal-body').append($('<div>', {
-                    text: element
-                }));
-            });
+            
+           
+            var listdata = JSON.parse(result);
+
+            $(".modal-body #tenchinh").text(listdata.ten);
+            $(".modal-body #tensp").attr("placeholder", listdata.ten).val(listdata.ten).focus().blur();
+            $(".modal-body #giasp").attr("placeholder", listdata.gia).val(listdata.gia).focus().blur();
+            $(".modal-body #soluongsp").attr("placeholder", listdata.soluong).val(listdata.soluong).focus().blur();
+            $(".modal-body #trongluongsp").attr("placeholder", listdata.trongluong).val(listdata.trongluong).focus().blur();
+            $(".modal-body #romsp").attr("placeholder", listdata.ROM).val(listdata.ROM).focus().blur();
+            $(".modal-body #ramsp").attr("placeholder", listdata.RAM).val(listdata.RAM).focus().blur();
+            $(".modal-body #thenhosp").attr("placeholder", listdata.thenho).val(listdata.thenho).focus().blur();
+            $(".modal-body #cameratruongsp").attr("placeholder", listdata.camera_truoc).val(listdata.camera_truoc).focus().blur();
+            $(".modal-body #camerasausp").attr("placeholder", listdata.camera_sau).val(listdata.camera_sau).focus().blur();
+            $(".modal-body #pinsp").attr("placeholder", listdata.pin).val(listdata.pin).focus().blur();
+            $(".modal-body #bluetoothsp").attr("placeholder", listdata.bluetooth).val(listdata.bluetooth).focus().blur();
+            $(".modal-body #cpusp").attr("placeholder", listdata.CPU).val(listdata.CPU).focus().blur();
+            $(".modal-body #manhinhsp").attr("placeholder", listdata.manhinh).val(listdata.manhinh).focus().blur();
+            $(".modal-body #thoigianbaohanhsp").attr("placeholder", listdata.baohanh).val(listdata.baohanh).focus().blur();
+            $(".modal-body #tinhtrang").attr("placeholder", listdata.tinhtrang).val(listdata.tinhtrang).focus().blur();
+            $(".modal-body #nhasanxuatsp").val(listdata.id_nsx)
+            
+            
         }
     });
 
@@ -36,10 +47,39 @@ $(document).on("click", ".editproduct", function () {
 // action post data edit sanpham
 $(document).on("click", ".submitsanphamupdate", function () {
 
-    var data = "{data:\"312312\"}";
-    $.post("/api/sanpham/updatesanpham/", { "": "32344323"},
+    var datalist = {};
+    datalist["id"] = $(".modal-body #idsanpham").text();
+    datalist["ten"] = $(".modal-body #tensp").val();
+    datalist["gia"] = $(".modal-body #giasp").val();
+    datalist["soluong"] = $(".modal-body #soluongsp").val();
+    datalist["trongluong"] = $(".modal-body #trongluongsp").val();
+    datalist["ROM"] = $(".modal-body #romsp").val();
+    datalist["RAM"] = $(".modal-body #ramsp").val();
+    datalist["thenho"] = $(".modal-body #thenhosp").val();
+    datalist["camera_truoc"] = $(".modal-body #cameratruocsp").val();
+    datalist["camera_sau"] = $(".modal-body #camerasausp").val();
+    datalist["pin"] = $(".modal-body #pinsp").val();
+    datalist["bluetooth"] = $(".modal-body #bluetoothsp").val();
+    datalist["CPU"] = $(".modal-body #cpusp").val();
+    datalist["manhinh"] = $(".modal-body #manhinhsp").val();
+    datalist["baohanh"] = $(".modal-body #thoigianbaohanhsp").val();
+    datalist["tinhtrang"] = $(".modal-body #tinhtrang").val();
+    datalist["id_nsx"] = $(".modal-body #nhasanxuatsp").val();
+
+    $.post("/api/sanpham/updatesanpham/", { "": JSON.stringify(datalist)},
         function (data) {
-            console.log(resual);
+            console.log(data);
+            var resual = JSON.parse(data);
+            if (resual.status === 0) {
+                alert("Sửa dữ liệu không thành công!!");
+            } else {
+                alert("Sửa dữ liệu thành công!!");
+                $("#hienten_" + resual.sanpham).html(datalist["ten"]);
+                $("#hiengia_" + resual.sanpham).html(datalist["gia"]);
+                $("#hiensoluong_" + resual.sanpham).html(datalist["soluong"]);
+                    
+            }
+        
         }   
     );
 
